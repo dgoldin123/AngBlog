@@ -27,7 +27,7 @@ export class PostsService {
       })
     );
   }
-  /*
+  
   loadFeaturedPosts(){
     //return this.angularFirestore.collection('posts'))
     return this.angularFirestore.collection('posts', ref => ref.where('isFeatured', '==', true)).snapshotChanges().pipe(
@@ -40,7 +40,7 @@ export class PostsService {
       })
     );
   }
-  */
+  
  /*
   loadLatestPosts(orderBy){
     return this.angularFirestore.collection('posts', ref => ref.orderBy(orderBy)).snapshotChanges().pipe(

@@ -12,8 +12,8 @@ export class HomeComponent implements OnInit {
   latestPostsArray: Array<object>;
 
   constructor(private postsService: PostsService) {
-    this.postsService.loadAllPosts('title').subscribe(featuredPosts => {
-    this.featuredPostsArray = featuredPosts; 
+    this.postsService.loadFeaturedPosts().subscribe(featuredPosts => {
+      this.featuredPostsArray = featuredPosts; 
     });
 
     this.postsService.loadAllPosts('createdAt').subscribe(latestPosts => {
