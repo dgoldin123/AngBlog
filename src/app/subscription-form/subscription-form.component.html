@@ -1,0 +1,30 @@
+<div class="card shadow-effect">
+    <div class="card-body">
+        <div class="text-center mt-3 mb-5">
+            <h3>SUBSCRIPTION FORM</h3>
+            <p class="m-auto subs-text">Subscribe Here</p>
+            <div class="alert alert-danger mt-3" *ngIf="isEmailInUse">Email In Use</div>
+            <div class="alert alert-info mt-3" *ngIf="isSubscribed">You Are Subscribed</div>
+            <form class="form-inline mb-5 mt-3" #subForm=ngForm (ngSubmit)="onSubmit(subForm.value)" *ngIf="!isSubscribed">
+                <div class="form-group col-md-5">
+                    <input type="text" class="form-control shadow-effect" placeholder="Your Name" name="name" 
+                        #Name="ngModel" ngModel required [ngClass]="{'is-invalid': Name.touched && Name.invalid}">
+                    <div class="text-danger" *ngIf="Name.touched && Name.invalid">
+                        <div *ngIf="Name.errors?.required">Missing Name</div>
+                    </div>
+                </div>
+                <div class="form-group col-md-5">
+                    <input type="email" class="form-control shadow-effect" placeholder="Email Address" name="email" 
+                        #Email="ngModel" ngModel required email [ngClass]="{'is-invalid': Email.touched && Email.invalid}"> 
+                        <div class="text-danger" *ngIf="Email.touched && Email.invalid">
+                            <div *ngIf="Email.errors?.required">Missing Email</div>
+                            <div *ngIf="Email.errors?.email">Missing Email</div>
+                        </div>
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-info btn-block btn-theme" [disabled]="subForm.invalid">SUBSCRIBE</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ang-blog-d3c17": {
+      "hosting": {
+        "ang-blog": [
+          "ang-blog-d3c17"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ang-blog-d3c17"
+  }
+}

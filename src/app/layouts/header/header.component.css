@@ -1,0 +1,9 @@
+header {
+    height: 100px;
+}
+.site-logo {
+    font-size: 1.5em;
+    width: 200px;
+    border: solid 0px ;
+}
+
